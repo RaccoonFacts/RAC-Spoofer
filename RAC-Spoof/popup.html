@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<body style="width:270px;padding:10px;font-family:sans-serif;background:#1a1a1a;color:#fff;margin:0">
+  <h3 style="margin:0 0 8px;color:#ff6b6b">RAC Spoofer</h3>
+
+  <!-- PRESET -->
+  <label style="font-size:11px;color:#aaa">PRESET</label><br>
+  <select id="profile" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-top:4px">
+    <option value="none">-- Off --</option>
+    <optgroup label="Appliances">
+      <option value="toaster">Toaster (240x180)</option>
+      <option value="fridge">Smart Fridge (800x1280)</option>
+      <option value="microwave">Microwave (160x90)</option>
+      <option value="dishwasher">Dishwasher (480x272)</option>
+      <option value="toothbrush">Smart Toothbrush (32x8)</option>
+      <option value="smoke_alarm">Smoke Alarm (16x16)</option>
+    </optgroup>
+    <optgroup label="Screens">
+      <option value="widescreen">Cursed Widescreen (5000x100)</option>
+      <option value="postage_stamp">Postage Stamp (10x10)</option>
+      <option value="billboard">Billboard (14400x48)</option>
+      <option value="nasa">NASA Supercomputer (7680x4320)</option>
+    </optgroup>
+    <optgroup label="Devices">
+      <option value="gameboy">Game Boy (160x144)</option>
+      <option value="calculator">Calculator (96x64)</option>
+      <option value="smartwatch">Smartwatch (44x44)</option>
+      <option value="vr_headset">VR Headset (4096x2048)</option>
+      <option value="etch_a_sketch">Etch A Sketch (240x160)</option>
+    </optgroup>
+    <optgroup label="Vehicles">
+      <option value="tesla">Tesla Dashboard (1200x900)</option>
+      <option value="mars_rover">Mars Rover (1024x768)</option>
+    </optgroup>
+    <optgroup label="Other">
+      <option value="atm">ATM Machine (800x600)</option>
+      <option value="dot_matrix">Dot Matrix Printer (80x66)</option>
+      <option value="potato">Potato PC (320x240)</option>
+    </optgroup>
+  </select>
+
+  <!-- CUSTOM SIZE OVERRIDE -->
+  <br><br>
+  <label style="font-size:11px;color:#aaa">SIZE OVERRIDE (optional)</label><br><br>
+  <div style="display:flex;gap:6px;margin-bottom:6px">
+    <input id="cWidth" type="number" placeholder="Width" style="width:50%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box">
+    <input id="cHeight" type="number" placeholder="Height" style="width:50%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box">
+  </div>
+
+  <!-- BROWSER OVERRIDE -->
+  <label style="font-size:11px;color:#aaa">BROWSER OVERRIDE (optional)</label><br><br>
+  <select id="cBrowser" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset UA --</option>
+    <option value="chrome">Chrome 149</option>
+    <option value="firefox">Firefox 128</option>
+    <option value="safari">Safari 17</option>
+    <option value="edge">Edge 149</option>
+    <option value="ie11">Internet Explorer 11</option>
+    <option value="custom">Custom UA</option>
+  </select>
+  <input id="cUACustom" type="text" placeholder="Full custom UA string..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <select id="cOS" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset OS --</option>
+    <option value="Windows NT 10.0; Win64; x64">Windows 10/11 x64</option>
+    <option value="Windows NT 6.1; Win64; x64">Windows 7 x64</option>
+    <option value="Macintosh; Intel Mac OS X 10_15_7">macOS Monterey</option>
+    <option value="Macintosh; Intel Mac OS X 11_0">macOS Big Sur</option>
+    <option value="X11; Linux x86_64">Linux x64</option>
+    <option value="X11; Ubuntu; Linux x86_64">Ubuntu x64</option>
+    <option value="Android 13; Mobile">Android 13</option>
+    <option value="iPhone; CPU iPhone OS 17_0 like Mac OS X">iOS 17</option>
+    <option value="custom">Custom OS string</option>
+  </select>
+  <input id="cOSCustom" type="text" placeholder="Custom OS string..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <!-- NAVIGATOR OVERRIDES -->
+  <label style="font-size:11px;color:#aaa">NAVIGATOR OVERRIDES (optional)</label><br><br>
+
+  <select id="cPlatform" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset Platform --</option>
+    <option value="Win32">Win32</option>
+    <option value="Win64">Win64</option>
+    <option value="MacIntel">MacIntel</option>
+    <option value="Linux x86_64">Linux x86_64</option>
+    <option value="iPhone">iPhone</option>
+    <option value="Android">Android</option>
+    <option value="RaccoonOS">RaccoonOS</option>
+    <option value="custom">Custom</option>
+  </select>
+  <input id="cPlatformCustom" type="text" placeholder="Custom platform..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <select id="cVendor" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset Vendor --</option>
+    <option value="Google Inc.">Google Inc.</option>
+    <option value="Apple Computer, Inc.">Apple Computer, Inc.</option>
+    <option value="">None (Firefox)</option>
+    <option value="Microsoft">Microsoft</option>
+    <option value="Raccoon Inc.">Raccoon Inc.</option>
+    <option value="custom">Custom</option>
+  </select>
+  <input id="cVendorCustom" type="text" placeholder="Custom vendor..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <!-- WEBGL OVERRIDES -->
+  <label style="font-size:11px;color:#aaa">WEBGL OVERRIDES (optional)</label><br><br>
+
+  <select id="cWebGLVendor" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset WebGL Vendor --</option>
+    <option value="Google Inc. (NVIDIA)">Google Inc. (NVIDIA)</option>
+    <option value="Google Inc. (AMD)">Google Inc. (AMD)</option>
+    <option value="Google Inc. (Intel)">Google Inc. (Intel)</option>
+    <option value="Apple Inc.">Apple Inc.</option>
+    <option value="Mozilla">Mozilla</option>
+    <option value="Raccoon Inc.">Raccoon Inc.</option>
+    <option value="custom">Custom</option>
+  </select>
+  <input id="cWebGLVendorCustom" type="text" placeholder="Custom WebGL vendor..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <select id="cWebGLRenderer" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;margin-bottom:6px">
+    <option value="">-- Use Preset WebGL Renderer --</option>
+    <option value="ANGLE (NVIDIA, NVIDIA GeForce RTX 3080 Direct3D11 vs_5_0 ps_5_0, D3D11)">NVIDIA RTX 3080</option>
+    <option value="ANGLE (NVIDIA, NVIDIA GeForce GTX 1080 Direct3D11 vs_5_0 ps_5_0, D3D11)">NVIDIA GTX 1080</option>
+    <option value="ANGLE (AMD, Radeon RX 6800 XT Direct3D11 vs_5_0 ps_5_0, D3D11)">AMD RX 6800 XT</option>
+    <option value="ANGLE (Intel, Intel(R) UHD Graphics 630 Direct3D11 vs_5_0 ps_5_0, D3D11)">Intel UHD 630</option>
+    <option value="Apple M1">Apple M1</option>
+    <option value="Mesa Intel(R) UHD Graphics 620 (KBL GT2)">Mesa Intel UHD 620</option>
+    <option value="ToasterGPU 1.0">ToasterGPU 1.0</option>
+    <option value="custom">Custom</option>
+  </select>
+  <input id="cWebGLRendererCustom" type="text" placeholder="Custom WebGL renderer..." style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555;box-sizing:border-box;margin-bottom:6px;display:none">
+
+  <!-- HARDWARE OVERRIDES -->
+  <label style="font-size:11px;color:#aaa">HARDWARE OVERRIDES (optional)</label><br><br>
+  <div style="display:flex;gap:6px;margin-bottom:10px">
+    <div style="width:50%">
+      <label style="font-size:10px;color:#aaa">CPU Cores</label>
+      <select id="cCores" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555">
+        <option value="">-- Preset --</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="8">8</option>
+        <option value="12">12</option>
+        <option value="16">16</option>
+        <option value="32">32</option>
+      </select>
+    </div>
+    <div style="width:50%">
+      <label style="font-size:10px;color:#aaa">RAM (GB)</label>
+      <select id="cRAM" style="width:100%;padding:4px;background:#333;color:#fff;border:1px solid #555">
+        <option value="">-- Preset --</option>
+        <option value="0.25">0.25</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="4">4</option>
+        <option value="8">8</option>
+        <option value="16">16</option>
+        <option value="32">32</option>
+      </select>
+    </div>
+  </div>
+
+  <button id="apply" style="width:100%;padding:6px;background:#ff6b6b;color:#fff;border:none;cursor:pointer;border-radius:4px">Apply</button>
+
+  <hr style="border-color:#333;margin:10px 0">
+
+  <button id="random" style="width:100%;padding:6px;background:#6b6bff;color:#fff;border:none;cursor:pointer;border-radius:4px">Random Chaos</button>
+
+  <hr style="border-color:#333;margin:10px 0">
+
+  <label style="font-size:12px;cursor:pointer">
+    <input type="checkbox" id="chaos"> Auto chaos (3 min)
+  </label>
+
+  <p id="status" style="font-size:11px;color:#ff6b6b;margin:8px 0 0;min-height:16px"></p>
+  <script src="popup.js"></script>
+</body>
+</html>
