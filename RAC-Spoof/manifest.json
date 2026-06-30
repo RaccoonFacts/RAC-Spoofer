@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "RAC Spoofer",
+  "version": "3.0",
+  "description": "Chaos browser spoofer by RaccoonFacts",
+  "icons": {
+    "16":  "icon.png",
+    "48":  "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "storage",
+    "scripting",
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "http://localhost/*"
+  ]
+}
